@@ -4,7 +4,9 @@ import { AuthService } from './../_services/auth.service';
 import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
 import { AlerifyService } from '../_services/alerify.service';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker/public_api';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker/bs-datepicker.config';
+
+
 
 
 @Component({

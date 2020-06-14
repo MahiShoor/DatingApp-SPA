@@ -12,6 +12,9 @@
         <li class="nav-item" routerLinkActive="router-link-active">
           <a class="nav-link " [routerLink]="['/messages']" tabindex="-1">Massages</a>
         </li>
+        <li *appHasRole="['Admin','Moderator']" class="nav-item" routerLinkActive="router-link-active">
+          <a class="nav-link " [routerLink]="['/admin']" tabindex="-1">Admin</a>
+        </li>
       </ul>
       <div *ngIf="loggedIn()" class="dropdown show" dropdown>
         <span class="mr-1"><img  src="{{photoUrl  || '../../assets/user.png' }}" alt=""></span>

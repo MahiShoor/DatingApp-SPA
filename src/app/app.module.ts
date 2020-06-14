@@ -1,3 +1,4 @@
+
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { AuthGuard } from './_gaurds/auth.guard';
 import { UserService } from './_services/user.service';
@@ -21,6 +22,7 @@ import { PreventUnsavedChanges } from './_gaurds/prevent-unsaved-changes.guard';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
+import { HasRoleDirective } from './_directives/has-role.directive';
 
 
 export function tokenGetter() {
@@ -33,28 +35,24 @@ export function tokenGetter() {
       NavComponent,
       HomeComponent,
       RegisterComponent,
- 
-
+      HasRoleDirective,
     ],
    imports: [
        AppRoutingModule,
       HttpClientModule,
       FormsModule,
+       BrowserAnimationsModule,
       ReactiveFormsModule,
-      BrowserAnimationsModule,
       AppRoutingModule,
       JwtModule.forRoot({
          config : {
             tokenGetter: tokenGetter,
-            whitelistedDomains: ['localhost:5000'],
-            blacklistedRoutes: ['localhost:5000/api/auth']
+           
          }
       }),
             BsDropdownModule.forRoot(),
             BsDatepickerModule.forRoot(),
-
-
-
+        
    ],
    providers: [
       AuthService,
